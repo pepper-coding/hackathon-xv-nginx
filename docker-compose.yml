@@ -1,0 +1,18 @@
+services:
+  nginx:
+    container_name: nginx
+    restart: always
+    image: nginx
+    networks:
+      - portainer
+      - backend
+      - nginx
+    ports:
+      - 80:80
+networks:
+  portainer:
+    external: true
+  backend:
+    external: true
+  nginx:
+    name: nginx
